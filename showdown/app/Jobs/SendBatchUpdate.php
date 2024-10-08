@@ -25,7 +25,7 @@ class SendBatchUpdate implements ShouldQueue
         $payload = ['updates' => $this->batch];
 
         // Send the request to the third-party API
-        $response = Http::post('https://127.0.0.1:8000/api/batch-endpoint', $payload);
+        $response = Http::post('https://127.0.0.1:8000/api//user-attributes/update', $payload);
 
         if ($response->failed()) {
             // Log or handle the error as needed

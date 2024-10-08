@@ -16,7 +16,7 @@ class UserAttributeController extends Controller
 
     //function to perform the update
     public function update(Request $request){
-        $changes = $request->input('changes'); // Expected input: { "changes": [{ "email": "...", "attribute": "value" }, ...] }
+        $changes = $request->input('batches'); // Expected input: { "batches": [{ "email": "...", "attribute": "value" }, ...] }
 
         //Validate the input
         $validated = $this->validateChanges($changes);
@@ -47,7 +47,7 @@ class UserAttributeController extends Controller
         try {
             // $response = Http::post('https://thirdpartyapi.com/batch-endpoint', $payload);
             
-             $response = Http::post('https://127.0.0.1:8000/api/batch-endpoint', $payload);
+             $response = Http::post('https://127.0.0.1:8000/api//user-attributes/update', $payload);
 
             // Handle the response, e.g., log errors, etc.
             if ($response->failed()) {
